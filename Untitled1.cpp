@@ -24,7 +24,7 @@ int main()
 	char Symbol[]={'+','-','X','/','=','(',')','\0'};
 	while(1)
 	{
-	printf("ÇëÊäÈëĞèÒªµÄËãÊ½ÊıÁ¿\n");
+	printf("è¯·è¾“å…¥éœ€è¦çš„ç®—å¼æ•°é‡\n");
 	srand((unsigned)time(NULL));
 	scanf("%d",&n);
 	for(i=1;i<=n;i++)
@@ -117,7 +117,7 @@ flg1:	temp[0]=rand()%100;
 					if(temp[2]!=0&&(ans[i]%temp[2]==0))
 					{
 						ans[i]=Calculation(temp[4],ans[i],temp[2]);
-						printf("%c%d%c%d%c¡Â%d%c\n",Symbol[5],temp[0],Symbol[temp[3]],temp[1],Symbol[6],temp[2],Symbol[4]);
+						printf("%c%d%c%d%cÃ·%d%c\n",Symbol[5],temp[0],Symbol[temp[3]],temp[1],Symbol[6],temp[2],Symbol[4]);
 						continue;
 //						printf("%c%d%c%d%c%c%d%c\n",Symbol[5],temp[0],Symbol[temp[3]],temp[1],Symbol[6],Symbol[temp[4]],temp[2],Symbol[4]);
 					}
@@ -141,7 +141,7 @@ flg1:	temp[0]=rand()%100;
 			}
 			if(temp[3]==3)
 			{
-				if(temp[2]!=0&&(temp[0]%temp[1]==0))
+				if(temp[1]!=0&&(temp[0]%temp[1]==0))
 				{
 					ans[i]=Calculation(temp[3],temp[0],temp[1]);
 					if(ans[i]>100)
@@ -173,7 +173,7 @@ flg1:	temp[0]=rand()%100;
 
 						else
 						{
-							printf("%d¡Â%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
+							printf("%dÃ·%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
 							continue;
 						}
 					}
@@ -205,7 +205,7 @@ flg1:	temp[0]=rand()%100;
 						}
 						else
 						{
-							printf("%d¡Â%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
+							printf("%dÃ·%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
 							continue;
 						}
 					}
@@ -230,7 +230,7 @@ flg1:	temp[0]=rand()%100;
 					
 					else
 					{
-						printf("%d¡Â%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
+						printf("%dÃ·%d%c%d%c\n",temp[0],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
 						continue;
 					}
 					
@@ -250,13 +250,13 @@ flg1:	temp[0]=rand()%100;
 //						printf("%d%c%d%c%d%c\n",temp[0],Symbol[temp[3]],temp[1],Symbol[temp[4]],temp[2],Symbol[4]);
 						if(temp[3]==2)
 						{
-							printf("%d%c%d¡Â%d%c\n",temp[0],Symbol[temp[3]],temp[1],temp[2],Symbol[4]);
+							printf("%d%c%dÃ·%d%c\n",temp[0],Symbol[temp[3]],temp[1],temp[2],Symbol[4]);
 							continue;
 						}
 						
 						else
 						{
-							printf("%d¡Â%d¡Â%d%c\n",temp[0],temp[1],temp[2],Symbol[4]);
+							printf("%dÃ·%dÃ·%d%c\n",temp[0],temp[1],temp[2],Symbol[4]);
 							continue;
 						}
 						
@@ -271,7 +271,7 @@ flg1:	temp[0]=rand()%100;
 		}
 		
 	}
-	printf("ÊäÈë1²é¿´´ğ°¸\n");
+	printf("è¾“å…¥1æŸ¥çœ‹ç­”æ¡ˆ\n");
 	scanf("%d",&q);
 	if(q==1)
 	{
@@ -281,7 +281,7 @@ flg1:	temp[0]=rand()%100;
 		}
 		printf("%d\n",ans[i]);
 	}
-	printf("ÊäÈë1¼ÌĞø£¬ÊäÈë0½áÊø\n");
+	printf("è¾“å…¥1ç»§ç»­ï¼Œè¾“å…¥0ç»“æŸ\n");
 	scanf("%d",&q);
 	if(q==1)
 	{
