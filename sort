@@ -1,0 +1,74 @@
+#pragma warning(disable:4996)
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
+#include <math.h>
+#include <iostream>
+#include<algorithm>
+using namespace std;
+void QuickSort(int a[], int s,int l)
+{
+	int a_start = s, a_end = l;//数组开始位置与结束位置
+	int temp;
+	if (a_start < a_end)
+	{
+
+
+		temp = a[a_start];
+		while (a_start != a_end)//当两个指针相遇则结束
+		{
+			while ((a_end > a_start) && (temp <= a[a_end]))//找到第一个小于temp的值
+				--a_end;
+			if (a_start < a_end)
+			{
+				a[a_start] = a[a_end];//赋值
+				a_start++;
+			}
+			while ((a_start < a_end) && (temp >= a[a_start]))//找到第一个大于temp的值
+				a_start++;
+			if (a_start < a_end)
+			{
+				a[a_end] = a[a_start];//赋值
+				a_end--;
+			}
+
+		}
+		a[a_end] = temp;
+		QuickSort(a, s, a_start - 1);//递归左边
+		QuickSort(a, a_start + 1, l);//递归右边
+	}
+}
+
+void main() {
+	int i=0, j, k;
+	int temp[100000];
+	FILE* fp=fopen("1.txt", "r");
+
+	while (!feof(fp))
+	{
+		if (fscanf(fp, "%d", &temp[i]) != 1)
+			break;
+		i++;
+		fgetc(fp);
+	}
+
+	fclose(fp);
+	time_t c_start, t_start, c_end, t_end;
+
+	c_start = clock();    //!< 单位为ms
+	t_start = time(NULL);  //!< 单位为s
+	system("pause");
+	c_end = clock();
+	t_end = time(NULL);
+
+
+	//QuickSort(temp, 0,99999);
+	sort(temp, temp + 100000);
+	printf("The pause used %f ms by clock()\n", difftime(c_end, c_start));
+	printf("The pause used %f s by time()\n", difftime(t_end, t_start));
+	system("pause");
+
+
+
+}
